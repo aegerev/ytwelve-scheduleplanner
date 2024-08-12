@@ -10,22 +10,18 @@ export function TaskForm({ addTask }) {
 		setInput('');
 	};
 
-return (
-		<div className="app">
-			<h1>Task Manager</h1>
-			<p>Number of tasks: </p>
-
-<TaskForm addTask={addTask} />
-			<div className="tasks">
-				{tasks.map((task) => (
-					<Task
-						key={task.id}
-						task={task}
-						deleteTask={deleteTask}
-						toggleTaskCompletion={toggleTaskCompletion}
-					/>
-				))}
-			</div>
-		</div>
+    return (
+		<form className="task-form" onSubmit={handleSubmit}>
+			<input
+				type="text"
+				className="task-input"
+				placeholder="Add a new task"
+				value={input}
+				onChange={(e) => setInput(e.target.value)}
+			/>
+			<button type="submit" className="task-button">
+				Add Task
+			</button>
+		</form>
 	);
 }

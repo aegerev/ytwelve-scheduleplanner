@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { TaskForm } from './TaskForm';
-import { Task } from './Task';
-
-import { createRoot } from "react-dom/client";
-
+import { TaskForm } from './components/TaskForm.jsx';
+import { Task } from './components/Task.jsx';
+import './App.css'
 
 
 export function App() {
