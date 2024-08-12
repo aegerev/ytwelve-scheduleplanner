@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { TaskForm } from './components/TaskForm.jsx';
-import { Task } from './components/Task.jsx';
+import { TaskForm } from './TaskForm';
+import { Task } from './Task';
 
-function App() {
+import { createRoot } from "react-dom/client";
 
-  const [tasks, setTasks] = React.useState([]);
+
+
+export function App() {
+	const [tasks, setTasks] = useState([]);
 
 	const addTask = (task) => {
 		setTasks([...tasks, { id: Date.now(), text: task, completed: false }]);
@@ -25,7 +28,8 @@ function App() {
 	return (
 		<div className="app">
 			<h1>Task Manager</h1>
-      <p>Number of tasks: {tasks.length}</p>
+			<p>Number of tasks: {tasks.length}</p>
+
 			<TaskForm addTask={addTask} />
 			<div className="tasks">
 				{tasks.map((task) => (
