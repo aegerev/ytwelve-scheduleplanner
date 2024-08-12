@@ -25,6 +25,7 @@ function App() {
 	return (
 		<div className="app">
 			<h1>Task Manager</h1>
+      <p>Number of tasks: {tasks.length}</p>
 			<TaskForm addTask={addTask} />
 			<div className="tasks">
 				{tasks.map((task) => (

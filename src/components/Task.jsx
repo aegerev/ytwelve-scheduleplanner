@@ -7,7 +7,7 @@ export function Task({ task, deleteTask, toggleTaskCompletion }) {
 			<input
 				type="checkbox"
 				checked={task.completed}
-
+                onChange={() => toggleTaskCompletion(task.id)}
 				className="task-checkbox"
 			/>
 			<span className="task-text">{task.text}</span>
